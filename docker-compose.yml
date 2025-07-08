@@ -1,0 +1,8 @@
+services:
+  app:
+    build: . #construir a imagem a partir do Dockerfile o ponto está mencionando o diretório atual
+    container_name: api #nome do container
+    ports:
+      - 8000:8000 #mapear a porta 8000 do container para a porta 8000 do host conforme definido no Dockerfile com expose 8000 e CMD
+    volumes:
+      - .:/app #mapear o diretório atual para o container - conforme voce altera o código, o conteudo do diretório atual é refletido no container sem precisar ficar atualizando manualmente a cada alteração
